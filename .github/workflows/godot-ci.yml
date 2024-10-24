@@ -28,10 +28,10 @@ jobs:
         ls ~/.local/share/godot/export_templates/${GODOT_VERSION}
     - name: Web Build
       run: |
-        cd godot
         mkdir -v -p build/html
-        godot -v --headless --export-release "Web" build/html/index.html
-        godot -v --headless --export-release "Web" build/html/index.html
+        cd godot
+        godot -v --headless --export-release "Web" ../build/html/index.html
+        godot -v --headless --export-release "Web" ../build/html/index.html
     - name: Publish to Itch.io
       uses: josephbmanley/butler-publish-itchio-action@master
       env:
@@ -56,10 +56,10 @@ jobs:
           ls ~/.local/share/godot/export_templates/${GODOT_VERSION}
       - name: Windows Build
         run: |
-          cd godot
           mkdir -v -p build/windows
-          godot -v --headless --export-release "Windows Desktop" build/windows/$EXPORT_NAME.exe
-          godot -v --headless --export-release "Windows Desktop" build/windows/$EXPORT_NAME.exe
+          cd godot
+          godot -v --headless --export-release "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
+          godot -v --headless --export-release "Windows Desktop" ../build/windows/$EXPORT_NAME.exe
       - name: Publish to Itch.io
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
