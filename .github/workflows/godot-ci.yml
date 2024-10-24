@@ -37,7 +37,7 @@ jobs:
       env:
         BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
         CHANNEL: web
-        PACKAGE: godot/build/html
+        PACKAGE: build/html
   
   export-windows:
     name: Windows Export
@@ -65,4 +65,4 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
           CHANNEL: windows
-          PACKAGE: godot/build/windows
+          PACKAGE: build/windows
